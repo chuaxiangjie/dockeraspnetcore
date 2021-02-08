@@ -5,7 +5,10 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
+#FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
+
 WORKDIR /src
 COPY ["dockeraspnetcore.csproj", ""]
 RUN dotnet restore "./dockeraspnetcore.csproj"
